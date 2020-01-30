@@ -1,0 +1,26 @@
+df.head() 
+Postcode = []
+j = 0
+for i in range(len(df)):
+    Postcode.append(df.loc[i,"Postcode"])
+    #print(Postcode)
+for i in range(len(Postcode)):
+    if(Postcode[i] == Postcode[i-1]):
+    #duplicate detected!!
+        #print(Postcode[i-1])
+        #print(df.loc[i-1,"Neighborhood\n"])
+        #print(Postcode[i])
+        #print(df.loc[i,"Neighborhood\n"])
+        x = df.loc[i-1,"Neighborhood\n"] + df.loc[i,"Neighborhood\n"]
+        print(x)
+        df.at[i-1,'Neighborhood\n'] = x
+        #print(df.loc[i-1,"Neighborhood\n"])
+        
+        #print(Neighborhood)
+    #for j in range(len(df)):
+        #if(Postcode == df.loc[j,"Postcode"]):
+            #print(df.loc[j,"Neighborhood\n"])
+            #Neighborhood = l1.append(df.loc[j,"Neighborhood\n"])
+            #print(Neighborhood)
+    #df.loc[i,"Neighborhood\n"] = Neighborhoodprint(df.loc[i,"Neighborhood\n"]) 
+df.head()
